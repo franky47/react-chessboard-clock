@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600');
+
+html, body {
+  background-color: ivory;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: rgb(94, 48, 26);
+  padding: 10px;
+  color: ivory;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+main {
+  margin-top: 30px;
+  text-align: center;
+}

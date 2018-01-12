@@ -1,0 +1,44 @@
+.chessboard {
+  margin: 20px auto;
+  width: 407px;
+  height: 407px;
+  display: grid;
+  grid-template-rows: repeat(8, 50px);
+  grid-template-columns: repeat(8, 50px);
+  grid-gap: 1px 1px;
+  background-color: sienna;
+  border-radius: 4px;
+  border: solid 4px sienna;
+}
+
+.chessboard .cell {
+  line-height: 50px;
+  font-size: 2rem;
+}
+.chessboard .cell > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 500px) {
+  .chessboard {
+    width: 75%;
+    height: 75%;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .chessboard .cell {
+    font-size: 1rem;
+    line-height: 30px;
+  }
+}
+
+.chessboard .cell.white {
+  background-color: wheat;
+  color: peru;
+}
+.chessboard .cell.black {
+  background-color: peru;
+  color: wheat;
+}

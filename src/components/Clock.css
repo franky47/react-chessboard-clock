@@ -1,0 +1,22 @@
+.clock {
+  display: grid;
+  width: 407px;
+  margin: 0 auto;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.clock .digit {
+  font-family: 'Open Sans';
+  font-size: 3rem;
+  font-weight: 100;
+  color: sienna;
+}
+
+@media (max-width: 500px) {
+  .clock {
+    width: 75%;
+  }
+  .clock .digit {
+    font-size: 2.25rem;
+  }
+}

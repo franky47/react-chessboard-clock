@@ -1,0 +1,14 @@
+footer {
+  margin-top: 2rem;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  color: rgb(221, 176, 125);
+}
+
+footer > p {
+  margin: 0.25rem;
+}
+
+footer a {
+  color: rgb(180, 132, 110);
+}
