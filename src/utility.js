@@ -22,10 +22,22 @@ export const generateBinaryGrid = (date, time) => {
 }
 
 export const placePieces = (grid, previous) => {
-  const types = ['k', 'q', 'b', 'r', 'n', 'p']
-  const pick = () => types[Math.floor(Math.random() * types.length)]
+  const pick = (x, y, color, grid) => {
+    const has = (piece) => grid.find(row => row.includes(piece))
+    y = color === 'w' ? 8 - y : y
+    if (!has(`k${color}`)) {
+      return 'k'
+    }
+    if (!has(`q${color}`)) {
+      return 'q'
+    }
+    return 'p'
+  }
   const color = (y) => y < 4 ? 'b' : 'w'
-  const newPiece = (x, y) => `${pick()}${color(y)}`
+  const newPiece = (x, y, grid) => {
+    const c = color(y)
+    return `${pick(x, y, c, grid)}${c}`
+  }
 
   if (previous === null) {
     previous = [
@@ -35,15 +47,15 @@ export const placePieces = (grid, previous) => {
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null],
-      ['pw', 'pw', 'pw', 'pw', 'pw', 'pw', 'pw', 'pw'],
-      ['rw', 'nw', 'bw', 'qw', 'kw', 'bw', 'nw', 'rw']
+      ['pw', 'pw', 'qw', 'pw', 'pw', 'kw', 'pw', 'pw'],
+      ['rw', 'nw', 'bw', 'qw', 'rw', 'bw', 'nw', 'rw']
     ]
     // return grid.map((row, y) => row.map((cell, x) => cell === 1 ? newPiece(x, y) : null))
   }
 
   return grid.map((row, y) => row.map((cell, x) => {
     if (previous[y][x] === null) {
-      return cell === 1 ? newPiece(x, y) : null
+      return cell === 1 ? newPiece(x, y, previous) : null
     } else {
       return cell === 1 ? previous[y][x] : null
     }
