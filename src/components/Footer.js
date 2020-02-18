@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 
-import './Footer.css'
+import "./Footer.css";
 
-export default () => <footer>
-  <p>Built with React</p>
-  <a href='https://github.com/franky47/react-chessboard-clock'>GitHub</a> -
-  Copyright 2018 ® <a href='https://frabst.com'>François Best</a>
-</footer>
+export default () => (
+  <footer>
+    <a href="https://github.com/franky47/react-chessboard-clock">Source</a> -
+    Made with 🧡 by <a href="https://francoisbest.com">François Best</a>
+  </footer>
+);
